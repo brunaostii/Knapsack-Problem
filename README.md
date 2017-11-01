@@ -1,5 +1,5 @@
 # Projeto---Mochila-Booleana
-Projeto para utilização de estrutura de dados
+Projeto para utilização de estrutura de dados - Status: Em desenvolvimento
 
 O problema da mochila (em inglês, Knapsack problem) é um problema de optimização combinatória. O nome dá-se devido ao modelo de uma 
 situação em que é necessário preencher uma mochila com objetos de diferentes pesos e valores. O objetivo é que se preencha a mochila
