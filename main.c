@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include "mochila.h"
 
 int main(int argc, char * argv[]){ //nome do txt passado como parametro
 	
-	FILE *valorarq, *pesoarq, *capacidade;
+	FILE *valorarq, *pesoarq, *cap;
 	int qt_itens = 0, i = 0;
-	int *valor, *peso;
+	int *valor, *peso, capacidade;
 
 
 	if(!(valorarq = fopen(argv[1], "r"))){  //Leitura do arquivo, se não alocado retorna "NULL"
@@ -20,7 +20,7 @@ int main(int argc, char * argv[]){ //nome do txt passado como parametro
 		exit(2);
 	}
 
-	if(!(capacidade = fopen(argv[3], "r"))){
+	if(!(cap = fopen(argv[3], "r"))){
 		printf("Erro ao abrir o arquivo.\n");
 		exit(3);
 	}
@@ -29,23 +29,27 @@ int main(int argc, char * argv[]){ //nome do txt passado como parametro
 	
 		qt_itens++;
 	}
+	
+	printf("\n%d\n", qt_itens);
 
 	//após contagem, declaração dos vetores;
 	valor = (int*)malloc(sizeof(int)* qt_itens);
 	peso = (int*)malloc(sizeof(int)* qt_itens);		
 	
-	rewind(valorarq);  //VOLTA INICIO DO ARQUIVO
+	rewind(valorarq);
 
 	for(i = 0; i < qt_itens; i++){
 		fscanf(valorarq,"%d", &valor[i]);
 		fscanf(pesoarq, "%d", &peso[i]);
-	} 
+	}
+	fscanf(cap, "%d", &capacidade); 
 
 	for(i = 0; i < qt_itens; i++){
 		printf("%d -", valor[i]);
 		printf("%d\n", peso[i]);
 	}
 	
+
 }
 
 
