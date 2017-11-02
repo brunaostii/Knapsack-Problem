@@ -15,3 +15,8 @@ meta-heurística (algoritmos genéticos) para soluções aproximadas.
 [1] Xinjie Yu,Mitsuo Ge, Introduction to Evolutionary Algorithms, p.270-271 
 [2] Edwin D. Reilly, Concise Encyclopedia of Computer Science, p.562 \n
 [3] A.A.Puntambekar, Design and Analysis of Algorithms, p.8-22
+
+
+
+leitura de dados - ok - via txt
+
