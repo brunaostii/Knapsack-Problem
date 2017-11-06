@@ -1,22 +1,9 @@
-# Projeto---Mochila-Booleana
-Projeto para utilização de estrutura de dados - Status: Em desenvolvimento
+# Projeto: Mochila-Booleana
+ Status: Under development
 
-O problema da mochila (em inglês, Knapsack problem) é um problema de optimização combinatória. O nome dá-se devido ao modelo de uma 
-situação em que é necessário preencher uma mochila com objetos de diferentes pesos e valores. O objetivo é que se preencha a mochila
-com o maior valor possível, não ultrapassando o peso máximo.[1]
-O problema da mochila é um dos 21 problemas NP-completos de Richard Karp, exposto em 1972. A formulação do problema é extremamente
-simples, porém sua solução é mais complexa. Este problema é a base do primeiro algoritmo de chave pública (chaves assimétricas).[2]
-Normalmente este problema é resolvido com programação dinâmica, obtendo então a resolução exata do problema, mas também sendo 
-possível usar PSE (procedimento de separação e evolução). Existem também outras técnicas, como usar algoritmo guloso[3], 
-meta-heurística (algoritmos genéticos) para soluções aproximadas.
+The knapsack problem or rucksack problem is a problem in combinatorial optimization: Given a set of items, each with a weight and a value, determine the number of each item to include in a collection so that the total weight is less than or equal to a given limit and the total value is as large as possible. It derives its name from the problem faced by someone who is constrained by a fixed-size knapsack and must fill it with the most valuable items.
+One early application of knapsack algorithms was in the construction and scoring of tests in which the test-takers have a choice as to which questions they answer. For small examples it is a fairly simple process to provide the test-takers with such a choice. For example, if an exam contains 12 questions each worth 10 points, the test-taker need only answer 10 questions to achieve a maximum possible score of 100 points. However, on tests with a heterogeneous distribution of point values—i.e. different questions are worth different point values— it is more difficult to provide choices. Feuerman and Weiss proposed a system in which students are given a heterogeneous test with a total of 125 possible points. The students are asked to answer all of the questions to the best of their abilities. Of the possible subsets of problems whose total point values add up to 100, a knapsack algorithm would determine which subset gives each student the highest possible score
 
 
-
-[1] Xinjie Yu,Mitsuo Ge, Introduction to Evolutionary Algorithms, p.270-271 
-[2] Edwin D. Reilly, Concise Encyclopedia of Computer Science, p.562 \n
-[3] A.A.Puntambekar, Design and Analysis of Algorithms, p.8-22
-
-
-
-leitura de dados - ok - via txt
+reading the data: txt - ok
 
