@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "mochila.h"
+
 
 int main(int argc, char * argv[]){ //nome do txt passado como parametro
 	
