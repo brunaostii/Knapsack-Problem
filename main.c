@@ -8,6 +8,7 @@ typedef struct lista{
 }Lista;
 
 void Guloso(int peso[],int valor[], int capacidade, int qt_itens);
+int compara(int num1, int num2); void mochila(int capacidade, int peso[], int valor[], int n);
 Lista* inserefim(Lista* L, int valor); void imprime(Lista* L);
 
 int main(int argc, char * argv[]){ //nome do txt passado como parametro
@@ -57,16 +58,18 @@ int main(int argc, char * argv[]){ //nome do txt passado como parametro
 
 		 //Solução Aleatória
 		Guloso(peso, valor, capacidade,  qt_itens);
-
-
-			Lista* V = NULL;
-			Lista* P = NULL;
+		if(capacidade < 1000){
+				mochila(capacidade, peso, valor, qt_itens);
+		}
+		else{
+				Lista* V = NULL;
+				Lista* P = NULL;
 
 				for(i = 0; i < qt_itens; i++){
 						V = inserefim(V, valor[i]);
 						P = inserefim(P, peso[i]);
 				}
-
+			}
 
 	return 0;
 
@@ -119,3 +122,42 @@ void Guloso(int peso[],int valor[], int capacidade, int qt_itens){
 
 
 //Algoritmo de programação dinâmica
+int compara(int num1, int num2){
+	 	return (num1 > num2)? num1 : num2;
+}
+
+void mochila(int capacidade, int peso[], int valor[], int n){
+   int i, j;
+
+	 int** tabela = (int**)malloc(sizeof(int*)*(n+1));
+	 for(i = 0; i < (n+1); i++){
+		 tabela[i] = (int*)malloc(sizeof(int)*(capacidade+1));
+	 }
+
+   for (i = 0; i <= n; i++){
+       for (j = 0; j <= capacidade; j++){
+           if (i==0 || j==0)
+               tabela[i][j] = 0;
+           else if(peso[i-1] <= j)
+                 tabela[i][j] = compara(valor[i-1] + tabela[i-1][j-peso[i-1]], tabela[i-1][j]);
+           else
+                 tabela[i][j] = tabela[i-1][j];
+       }
+   }
+   i--;
+   j--;
+   printf("Valor maximo: %d \n",tabela[n][capacidade]);
+   printf("Dinamica: ");
+
+   	while(tabela[i][j]){
+		 	if(tabela[i][j] == tabela[i-1][j]){
+				i--;
+				printf("1 ");
+		}else{
+				printf("0 ");
+				i--;
+				j = j - peso[i];
+			}
+	}
+	printf("\n");
+}
