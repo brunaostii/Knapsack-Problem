@@ -7,7 +7,6 @@ typedef struct lista{
 	struct lista* prox;
 }Lista;
 
-int capMochila(int num1, int num2); int valormaximo(int peso[], int valor[], int qt_itens, int capacidade, int **mochila);
 void Guloso(int peso[],int valor[], int capacidade, int qt_itens);
 Lista* inserefim(Lista* L, int valor); void imprime(Lista* L);
 
@@ -38,9 +37,9 @@ int main(int argc, char * argv[]){ //nome do txt passado como parametro
 		qt_itens++;
 	}
 
-	printf("\n%d\n\n", qt_itens);
+	printf("Quantidade de itens: %d\n", qt_itens);
 	fscanf(cap, "%d", &capacidade);
-	printf("%d\n",capacidade);
+	printf("Capacidade Total da Mochila: %d\n",capacidade);
 
 	rewind(valorarq);
 	rewind(pesoarq);
@@ -59,16 +58,7 @@ int main(int argc, char * argv[]){ //nome do txt passado como parametro
 		 //Solução Aleatória
 		Guloso(peso, valor, capacidade,  qt_itens);
 
-		if(capacidade < 1000){
 
-			int** mochila = (int**)malloc(sizeof(int*)*(qt_itens));
-			for(i = 0; i < (qt_itens+1); i++){
-	        		mochila[i] = (int*)malloc(sizeof(int)*(capacidade));
-	        		for(j = 0; j < capacidade; j++){
-	           	 	mochila[i][j] = 0;
-	        		}
-						}
-		}else{
 			Lista* V = NULL;
 			Lista* P = NULL;
 
@@ -76,7 +66,8 @@ int main(int argc, char * argv[]){ //nome do txt passado como parametro
 						V = inserefim(V, valor[i]);
 						P = inserefim(P, peso[i]);
 				}
-	}
+
+
 	return 0;
 
 }
@@ -88,7 +79,7 @@ Lista* inserefim(Lista* L, int valor){
 	novo->info = valor;
 	novo->prox = NULL;
 
-	if(!L) return novo;
+	if(L == NULL) return novo;
 
 	while(aux->prox != NULL){
 		aux = aux->prox;
@@ -100,7 +91,7 @@ Lista* inserefim(Lista* L, int valor){
 
 void imprime(Lista* L){
 	while(L!= NULL){
-		printf("%d ", L->info);
+		printf(" %d ", L->info);
 		L = L->prox;
 	}
 }
@@ -125,3 +116,6 @@ void Guloso(int peso[],int valor[], int capacidade, int qt_itens){
 	}
 	printf("\n\n");
 }
+
+
+//Algoritmo de programação dinâmica
