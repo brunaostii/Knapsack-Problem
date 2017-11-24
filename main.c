@@ -2,14 +2,9 @@
 #include <stdlib.h>
 #include <time.h>
 
-typedef struct lista{
-	int info;
-	struct lista* prox;
-}Lista;
-
 void Guloso(int peso[],int valor[], int capacidade, int qt_itens);
 int compara(int num1, int num2); void mochila(int capacidade, int peso[], int valor[], int n);
-Lista* inserefim(Lista* L, int valor); void imprime(Lista* L);
+
 
 int main(int argc, char * argv[]){ //nome do txt passado como parametro
 
@@ -58,46 +53,13 @@ int main(int argc, char * argv[]){ //nome do txt passado como parametro
 
 		 //Solução Aleatória
 		Guloso(peso, valor, capacidade,  qt_itens);
+		mochila(capacidade, peso, valor, qt_itens);
 
-				mochila(capacidade, peso, valor, qt_itens);
-
-				/*Lista* V = NULL;
-				Lista* P = NULL;
-
-				for(i = 0; i < qt_itens; i++){
-						V = inserefim(V, valor[i]);
-						P = inserefim(P, peso[i]);
-				}
-*/
-				printf("Arq1: %s Arq2: %s Capacidade: %s \nTempo execucao: %.f\n", argv[1], argv[2], argv[3], 1000*((double)(clock() - start))/(CLOCKS_PER_SEC));
+	printf("Arq1: %s Arq2: %s Capacidade: %s \nTempo execucao: %.f\n", argv[1], argv[2], argv[3], 1000*((double)(clock() - start))/(CLOCKS_PER_SEC));
 
 	return 0;
 
 }
-
-
-/*Lista* inserefim(Lista* L, int valor){
-	Lista* aux = L;
-	Lista* novo = (Lista*)malloc(sizeof(Lista));
-	novo->info = valor;
-	novo->prox = NULL;
-
-	if(L == NULL) return novo;
-
-	while(aux->prox != NULL){
-		aux = aux->prox;
-	}
-	aux->prox = novo;
-
-	return L;
-}
-
-void imprime(Lista* L){
-	while(L!= NULL){
-		printf(" %d ", L->info);
-		L = L->prox;
-	}
-}*/
 
 //Algoritmo Guloso -- Aleatório
 void Guloso(int peso[],int valor[], int capacidade, int qt_itens){
@@ -163,7 +125,7 @@ void mochila(int capacidade, int peso[], int valor[], int n){
 			}
 	}
 	for(i = (n-1); i >= 0  ; --i){
-		printf(" %d ", resultado[i]);
+		printf("%d ", resultado[i]);
 	}
 	printf("\n");
 }
