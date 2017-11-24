@@ -58,10 +58,9 @@ int main(int argc, char * argv[]){ //nome do txt passado como parametro
 
 		 //Solução Aleatória
 		Guloso(peso, valor, capacidade,  qt_itens);
-		if(capacidade < 1000){
+
 				mochila(capacidade, peso, valor, qt_itens);
-		}
-		else{
+
 				Lista* V = NULL;
 				Lista* P = NULL;
 
@@ -69,7 +68,7 @@ int main(int argc, char * argv[]){ //nome do txt passado como parametro
 						V = inserefim(V, valor[i]);
 						P = inserefim(P, peso[i]);
 				}
-			}
+
 
 	return 0;
 
@@ -148,16 +147,22 @@ void mochila(int capacidade, int peso[], int valor[], int n){
    j--;
    printf("Valor maximo: %d \n",tabela[n][capacidade]);
    printf("Dinamica: ");
-
+	 int* resultado = (int*)malloc(sizeof(int)* n);
+	 int w = 0;
    	while(tabela[i][j]){
 		 	if(tabela[i][j] == tabela[i-1][j]){
 				i--;
-				printf("1 ");
-		}else{
-				printf("0 ");
+				resultado[w] = 0;
+				w++;
+		  }else{
+				resultado[w]= 1;
+				w++;
 				i--;
 				j = j - peso[i];
 			}
+	}
+	for(i = (n-1); i >= 0  ; --i){
+		printf(" %d ", resultado[i]);
 	}
 	printf("\n");
 }
