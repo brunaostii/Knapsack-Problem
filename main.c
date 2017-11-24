@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <time.h>
 
 typedef struct lista{
 	int info;
@@ -17,7 +17,7 @@ int main(int argc, char * argv[]){ //nome do txt passado como parametro
 	int qt_itens = 0, i = 0, aux = 0, aux2 = 0, j = 0;
 	int *valor, *peso, capacidade;
 
-
+	int start = clock();
 	if(!(valorarq = fopen(argv[1], "r"))){  //Leitura do arquivo, se não alocado retorna "NULL"
 		printf("Erro ao abrir o arquivo.\n");
 		exit(1);
@@ -61,21 +61,22 @@ int main(int argc, char * argv[]){ //nome do txt passado como parametro
 
 				mochila(capacidade, peso, valor, qt_itens);
 
-				Lista* V = NULL;
+				/*Lista* V = NULL;
 				Lista* P = NULL;
 
 				for(i = 0; i < qt_itens; i++){
 						V = inserefim(V, valor[i]);
 						P = inserefim(P, peso[i]);
 				}
-
+*/
+				printf("Arq1: %s Arq2: %s Capacidade: %s \nTempo execucao: %.f\n", argv[1], argv[2], argv[3], 1000*((double)(clock() - start))/(CLOCKS_PER_SEC));
 
 	return 0;
 
 }
 
 
-Lista* inserefim(Lista* L, int valor){
+/*Lista* inserefim(Lista* L, int valor){
 	Lista* aux = L;
 	Lista* novo = (Lista*)malloc(sizeof(Lista));
 	novo->info = valor;
@@ -96,7 +97,7 @@ void imprime(Lista* L){
 		printf(" %d ", L->info);
 		L = L->prox;
 	}
-}
+}*/
 
 //Algoritmo Guloso -- Aleatório
 void Guloso(int peso[],int valor[], int capacidade, int qt_itens){
