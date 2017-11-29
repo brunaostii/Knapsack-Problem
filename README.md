@@ -8,5 +8,10 @@ One early application of knapsack algorithms was in the construction and scoring
 [x]Reading the data: txt <br/>                                                                                                       [x]Random <br/>                                          #Database: <https://people.sc.fsu.edu/~jburkardt/datasets/knapsack_01/knapsack_01.html>
 
 Authors:
-      :-------------------:     :-----------------:  
-<br/>|Bruna Almeida Osti| <br/>|Matheus Massaiuki|
+       
+<br/>Bruna Almeida Osti <br/>Matheus Massaiuki
+
+Markdown | Less | Pretty
+--- | --- | ---
+*Still* | `renders` | **nicely**
+1 | 2 | 3
