@@ -13,6 +13,6 @@ Authors:
 
 Authors | 
 --- | 
-*Bruna Osti* | 
-`renders` | **Matheus Massaiuki**
+`´Bruna Osti`| 
+`Matheus Massaiuki` | 
 1 | 
