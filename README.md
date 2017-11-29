@@ -11,7 +11,8 @@ Authors:
        
 <br/>Bruna Almeida Osti <br/>Matheus Massaiuki
 
-Markdown | Less | Pretty
---- | --- | ---
-*Still* | `renders` | **nicely**
-1 | 2 | 3
+Authors | 
+--- | 
+*Bruna Osti* | 
+`renders` | **Matheus Massaiuki**
+1 | 
