@@ -6,10 +6,9 @@ One early application of knapsack algorithms was in the construction and scoring
 
 
 [x]Reading the data: txt <br/>                                                                                                       [x]Random <br/>[x]Dynamic programming<br/>                                          #Database: <https://people.sc.fsu.edu/~jburkardt/datasets/knapsack_01/knapsack_01.html>
+</br>
+</br>
 
-<p>
- 
- </p>
 
 Authors | 
 --- | 
